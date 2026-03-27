@@ -51,6 +51,18 @@ class _LoginViewState extends State<LoginView> {
               inputForm(
                 (value) {
                   if (value == null || value.isEmpty) {
+                    return "Nomor telepon tidak boleh kosong";
+                  }
+                  return null;
+                },
+                controller: _phoneController,
+                hintText: "Nomor Telepon",
+                helperText: "081234567890",
+                iconData: Icons.phone_android,
+              ),
+              inputForm(
+                (value) {
+                  if (value == null || value.isEmpty) {
                     return "Password tidak boleh kosong";
                   }
                   return null;
@@ -60,18 +72,6 @@ class _LoginViewState extends State<LoginView> {
                 hintText: "Password",
                 helperText: "Inputkan Password",
                 iconData: Icons.lock,
-              ),
-              inputForm(
-                (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Nomor telepon tidak boleh kosong";
-                  }
-                  return null;
-                },
-                controller: _phoneController,
-                hintText: "Nomor Telepon",
-                helperText: "081234567890",
-                iconData: Icons.phone_android,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
